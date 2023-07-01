@@ -83,17 +83,8 @@ body {
   position: relative;
   transition: all 0.3s cubic-bezier(0.55, 0.06, 0.41, 1.16);
 }
-.link iconify-icon {
-  position: absolute;
-  right: -16px;
-  bottom: -1px;
-  transition: all 0.3s cubic-bezier(0.55, 0.06, 0.41, 1.16);
-}
 .link:hover {
   color: #100B08;
-}
-.link:hover iconify-icon {
-  translate: 0 -4px;
 }
 
 /*.button{
@@ -144,6 +135,18 @@ tool-tip {
   right: 0;
   opacity: 0;
   transition: all 0.3s cubic-bezier(0.57, 0.07, 0.6, 0.99) 0.2s;
+}
+tool-tip::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: #E0E0E0;
+  position: absolute;
+  left: 12.5%;
+  top: -4px;
+  z-index: -10;
+  rotate: 45deg;
 }
 
 section {
@@ -224,7 +227,6 @@ header nav .logo:hover::before {
   padding: 24px 0;
 }
 header nav .item-nav {
-  display: flex;
   gap: 48px;
   justify-content: end;
 }
@@ -233,6 +235,7 @@ header nav .item-nav .link {
 }
 header nav .item-nav .link::before {
   content: "";
+  justify-items: center;
   display: block;
   position: absolute;
   width: 50%;
@@ -242,7 +245,7 @@ header nav .item-nav .link::before {
   top: 0;
   bottom: 0;
   margin: auto;
-  padding: 8px 0;
+  padding: 8px;
   border-radius: 16px;
   z-index: -10;
   opacity: 0;
@@ -258,6 +261,14 @@ header nav .item-nav .link:hover::before {
   left: -25%;
   padding: 24px;
 }
+header nav .item-nav .link:last-child:hover {
+  color: #FFF9F2;
+}
+header nav .item-nav .link:last-child:hover::before {
+  background: #0066c8;
+  width: 150%;
+  left: -100%;
+}
 
 footer {
   display: flex;
@@ -266,6 +277,18 @@ footer {
 }
 footer div .tag {
   margin: 0;
+}
+footer div .link iconify-icon {
+  position: absolute;
+  right: -16px;
+  bottom: -1px;
+  transition: all 0.3s cubic-bezier(0.55, 0.06, 0.41, 1.16);
+}
+footer div .link:hover {
+  color: #100B08;
+}
+footer div .link:hover iconify-icon {
+  translate: 0 -4px;
 }
 footer div .textbody {
   margin: 0;
@@ -421,7 +444,7 @@ footer div .textbody {
   transition: all 0.32s cubic-bezier(0.57, 0.07, 0.6, 0.99);
 }
 #project .project-content .cardProject .imgProjects-1 {
-  background: url(../multimedia/cineplanet.png);
+  background: url(../multimedia/cineplanet.webp);
   width: 400px;
   height: 400px;
   position: absolute;
@@ -433,7 +456,7 @@ footer div .textbody {
   transition: all 0.32s cubic-bezier(0.57, 0.07, 0.6, 0.99);
 }
 #project .project-content .cardProject .imgProjects-2 {
-  background: url(../multimedia/Bebold.png);
+  background: url(../multimedia/Bebold.webp);
   width: 400px;
   height: 400px;
   position: absolute;
@@ -445,7 +468,7 @@ footer div .textbody {
   transition: all 0.32s cubic-bezier(0.57, 0.07, 0.6, 0.99);
 }
 #project .project-content .cardProject .imgProjects-3 {
-  background: url(../multimedia/quercia.png);
+  background: url(../multimedia/quercia.webp);
   width: 400px;
   height: 400px;
   position: absolute;
@@ -457,7 +480,7 @@ footer div .textbody {
   transition: all 0.32s cubic-bezier(0.57, 0.07, 0.6, 0.99);
 }
 #project .project-content .cardProject .imgProjects-4 {
-  background: url(../multimedia/nativefood.png);
+  background: url(../multimedia/nativefood.webp);
   width: 400px;
   height: 400px;
   position: absolute;
@@ -677,7 +700,7 @@ footer div .textbody {
   background-color: #FFEBD3;
   padding: 32px 48px;
   border-radius: 64px;
-  box-shadow: 0 4px 16px 8px rgba(236, 230, 255, 0.3333333333), 0 4px 8px rgba(47, 42, 40, 0.2117647059);
+  box-shadow: 0 4px 16px 8px rgba(236, 230, 255, 0.3333333333);
 }
 #contact .cardContact .label {
   color: #929291;
@@ -762,20 +785,20 @@ footer div .textbody {
 }
 #contact .cardContact .contact-items .contact-links a:hover {
   box-shadow: 0 4px 16px 8px rgba(236, 230, 255, 0.3333333333);
+  /*&:nth-child(4){
+      background: #0066c8;
+      color: $colorBg;
+  }*/
 }
 #contact .cardContact .contact-items .contact-links a:hover:first-child {
   background: #1869ff;
   color: #FFF9F2;
 }
 #contact .cardContact .contact-items .contact-links a:hover:nth-child(2) {
-  background: #ea4c89;
-  color: #FFF9F2;
-}
-#contact .cardContact .contact-items .contact-links a:hover:nth-child(3) {
   background: #2F2A27;
   color: #FFF9F2;
 }
-#contact .cardContact .contact-items .contact-links a:hover:nth-child(4) {
+#contact .cardContact .contact-items .contact-links a:hover:nth-child(3) {
   background: #0066c8;
   color: #FFF9F2;
 }
